@@ -1,0 +1,19 @@
+<!-- excel.component.html -->
+<div *ngFor="let item of getExcelData(); let i = index">
+  {{ item | json }}
+  <button (click)="updateItem(i)">Update</button>
+  <button (click)="deleteItem(i)">Delete</button>
+</div>
+
+<div>
+  <h2>Add Data</h2>
+  <form (submit)="addData()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="newData.name" required>
+    
+    <label for="age">Age:</label>
+    <input type="number" id="age" [(ngModel)]="newData.age" required>
+
+    <button type="submit">Add</button>
+  </form>
+</div>
